@@ -63,6 +63,7 @@ class zebra(object):
 
     def output(self, commands):
         """Output EPL2 commands to the label printer
+
         commands - EPL2 commands to send to the printer
         """
         assert self.queue is not None
@@ -106,6 +107,7 @@ class zebra(object):
 
     def setup(self, direct_thermal=None, label_height=None, label_width=None):
         """Set up the label printer. Parameters are not set if they are None.
+
         direct_thermal - True if using direct thermal labels
         label_height   - tuple (label height, label gap) in dots
         label_width    - in dots
@@ -114,13 +116,14 @@ class zebra(object):
         if direct_thermal:
             commands += ('OD\n')
         if label_height:
-            commands += ('Q%s,%s\n'%(label_height[0],label_height[1]))
+           commands += ('Q%s,%s\n'%(label_height[0],label_height[1]))
         if label_width:
             commands += ('q%s\n'%label_width)
         self.output(commands)
 
     def store_graphic(self, name, filename):
         """Store a .PCX file on the label printer
+
         name     - name to be used on printer
         filename - local filename
         """
