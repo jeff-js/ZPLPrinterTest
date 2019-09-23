@@ -4,7 +4,7 @@ socket.on('connect', function(){
 });
 
 
-socket.on('typing', (data) => {
+socket.on('typing', function (data) {
     var message = "Welcome to Socket.IO Chat – ";
     console.log(message, data);
     const spawn = require("child_process").spawn;
